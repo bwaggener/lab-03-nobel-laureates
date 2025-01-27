@@ -16,6 +16,14 @@ nobel <- read_csv("data/nobel.csv")
 ```
 
 ## Exercises
+```{r read-data}
+names(nobel)
+```
+
+```{r summaryofdata}
+glimpse(nobel)
+
+```
 
 ### Exercise 1
 
