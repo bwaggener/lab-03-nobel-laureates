@@ -37,10 +37,14 @@ There are 26 variables and 935 observations. Each row represents an observation 
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+"create a new data frame called nobel_living that filters for laureates for whom country is available, laureates who are people as opposed to organizations (organizations are denoted with "org" as their gender), and laureates who are still alive (their died_date is NA)."
+
+``` {r filteringdata}
+
+nobel_living <- nobel %>%
+  
+
+```
 
 ### Exercise 3
 
