@@ -15,6 +15,11 @@ nobel <- read_csv("data/nobel.csv")
 
 ## Exercises
 
+### Exercise 1
+
+“How many observations and how many variables are in the dataset? Use
+inline code to answer this question. What does each row represent?”
+
 ``` r
 names(nobel)
 ```
@@ -62,11 +67,8 @@ glimpse(nobel)
     ## $ city_original         <chr> "Munich", "Leiden", "Amsterdam", "Paris", "Paris…
     ## $ country_original      <chr> "Germany", "the Netherlands", "the Netherlands",…
 
-### Exercise 1
-
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+There are 26 variables and 935 observations. Each row represents an
+observation (a nobel laureate).
 
 ### Exercise 2
 
