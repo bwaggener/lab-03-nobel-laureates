@@ -72,9 +72,19 @@ observation (a nobel laureate).
 
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+“create a new data frame called nobel_living that filters for laureates
+for whom country is available, laureates who are people as opposed to
+organizations (organizations are denoted with”org” as their gender), and
+laureates who are still alive (their died_date is NA).”
+
+\##use “NA” to indicate that country is unavailable.
+
+``` r
+nobel_living <- nobel %>%
+  filter(!is.na(country)) %>%
+  filter(!is.na(gender)) %>%
+  filter(!is.na(died_date))
+```
 
 ### Exercise 3
 
