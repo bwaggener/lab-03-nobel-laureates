@@ -105,10 +105,22 @@ nobel_living_science <- nobel_living %>%
   filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
 ```
 
-Here I created the nobel_living_science dataframe that I will use in the
-next section.
+Here I created the nobel_living_science dataframe that I will use for
+this section.
 
-### Exercise 4
+“Create a faceted bar plot visualizing the relationship between the
+category of prize and whether the laureate was in the US when they won
+the nobel prize. Interpret your visualization, and say a few words about
+whether the Buzzfeed headline is supported by the data.”
+
+``` r
+ggplot(nobel_living_science, aes(y = country_us))+
+  geom_bar()+
+  facet_wrap(~category)
+```
+
+![](lab-03_files/figure-gfm/barplotbycategory-1.png)<!-- --> \###
+Exercise 4
 
 …
 
