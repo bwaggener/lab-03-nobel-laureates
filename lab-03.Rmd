@@ -83,6 +83,8 @@ ggplot(nobel_living_science, aes(y = country_us))+
   geom_bar()+
   facet_wrap(~category)
 ```
+This data does not support the Buzzfeed article claim that "Most living Nobel laureates were based in the US when they won their prizes". Instead this shows that most living nobel laureates were based in places other than the US. Although it may still be true that the US has the most nobel laureates but that's not really what they said.
+
 ### Exercise 4
 
 ...
