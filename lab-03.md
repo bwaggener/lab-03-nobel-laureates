@@ -119,10 +119,35 @@ ggplot(nobel_living_science, aes(y = country_us))+
   facet_wrap(~category)
 ```
 
-![](lab-03_files/figure-gfm/barplotbycategory-1.png)<!-- --> \###
-Exercise 4
+![](lab-03_files/figure-gfm/barplotbycategory-1.png)<!-- --> This data
+does not support the Buzzfeed article claim that “Most living Nobel
+laureates were based in the US when they won their prizes”. Instead this
+shows that most living nobel laureates were based in places other than
+the US. Although it may still be true that the US has the most nobel
+laureates but that’s not really what they said.
 
-…
+### Exercise 4
+
+“Create a new variable called born_country_us that has the value”USA” if
+the laureate is born in the US, and “Other” otherwise. How many of the
+winners are born in the US?”
+
+``` r
+nobel_living_science <- nobel_living_science %>%
+  mutate(
+    born_country_us = if_else(country == "USA", "USA", "Other")
+  )
+
+
+ggplot(nobel_living_science, aes(y = born_country_us))+
+  geom_bar()
+```
+
+![](lab-03_files/figure-gfm/newvariable_borninus-1.png)<!-- -->
+
+Looking at this plot, it is clear that while a majority of living nobel
+winners were born outside of the us, a surprising number were born in
+the us.
 
 ### Exercise 5
 
