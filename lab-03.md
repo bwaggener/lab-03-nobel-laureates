@@ -88,9 +88,25 @@ nobel_living <- nobel %>%
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 1 here. Add code
-chunks as needed. Don’t forget to label your code chunk. Do not use
-spaces in code chunk labels.
+Creating the new variable
+
+``` r
+nobel_living <- nobel_living %>%
+  mutate(
+    country_us = if_else(country == "USA", "USA", "Other")
+  )
+```
+
+Restricting the analysis to only Physics, Medicine, Chemistry, and
+Economics.
+
+``` r
+nobel_living_science <- nobel_living %>%
+  filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
+```
+
+Here I created the nobel_living_science dataframe that I will use in the
+next section.
 
 ### Exercise 4
 
