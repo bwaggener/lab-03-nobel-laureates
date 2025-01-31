@@ -91,8 +91,7 @@ This data does not support the Buzzfeed article claim that "Most living Nobel la
 ```{r newvariable_borninus}
 
 nobel_living_science <- nobel_living_science %>%
-  mutate(
-    born_country_us = if_else(born_country == "USA", "USA", "Other")
+  mutate(born_country_us = if_else(born_country == "USA", "USA", "Other")
   )
 
 
@@ -126,5 +125,15 @@ ggplot(nobel_living_science, aes(x = country_us, fill = born_country_us))+
 The data does not support buzzfeeds claim that "Most living Nobel laureates were based in the US when they won their prizes". Instead it shows that most living laureates won their prize outside of the US and most of the winners in the US were born there.
 
 ### Exercise 6
+"In a single pipeline, filter for laureates who won their prize in the US, but were born outside of the US, and then create a frequency table (with the count() function) for their birth country (born_country) and arrange the resulting data frame in descending order of number of observations for each country. Which country is the most common?"
+
+```{r frequencytable}
+
+nobel_living_science %>%
+  filter(country == "USA", born_country_us == "Other")
+  count(born_country) %>%
+  arrange(desc(n))
+
+```
 
 ...
