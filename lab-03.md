@@ -135,7 +135,7 @@ winners are born in the US?”
 ``` r
 nobel_living_science <- nobel_living_science %>%
   mutate(
-    born_country_us = if_else(country == "USA", "USA", "Other")
+    born_country_us = if_else(born_country == "USA", "USA", "Other")
   )
 
 
@@ -151,7 +151,27 @@ the us.
 
 ### Exercise 5
 
-…
+“Add a second variable to your visualization from Exercise 3 based on
+whether the laureate was born in the US or not. Based on your
+visualization, do the data appear to support Buzzfeed’s claim? Explain
+your reasoning in 1-2 sentences.
+
+Your final visualization should contain a facet for each category.
+Within each facet, there should be a bar for whether the laureate won
+the award in the US or not. Each bar should have segments for whether
+the laureate was born in the US or not.”
+
+``` r
+ggplot(nobel_living_science, aes(x = country_us, fill = born_country_us))+
+  geom_bar()+
+   facet_wrap(~category)
+```
+
+![](lab-03_files/figure-gfm/three_withanother%20variable-1.png)<!-- -->
+The data does not support buzzfeeds claim that “Most living Nobel
+laureates were based in the US when they won their prizes”. Instead it
+shows that most living laureates won their prize outside of the US and
+most of the winners in the US were born there.
 
 ### Exercise 6
 
