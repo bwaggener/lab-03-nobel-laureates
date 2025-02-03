@@ -134,8 +134,7 @@ winners are born in the US?”
 
 ``` r
 nobel_living_science <- nobel_living_science %>%
-  mutate(
-    born_country_us = if_else(born_country == "USA", "USA", "Other")
+  mutate(born_country_us = if_else(born_country == "USA", "USA", "Other")
   )
 
 
@@ -174,5 +173,33 @@ shows that most living laureates won their prize outside of the US and
 most of the winners in the US were born there.
 
 ### Exercise 6
+
+“In a single pipeline, filter for laureates who won their prize in the
+US, but were born outside of the US, and then create a frequency table
+(with the count() function) for their birth country (born_country) and
+arrange the resulting data frame in descending order of number of
+observations for each country. Which country is the most common?”
+
+``` r
+nobel_living_science %>%
+  filter(country == "USA", born_country_us == "Other")%>%
+  count(born_country) %>%
+  arrange(desc(n))
+```
+
+    ## # A tibble: 27 × 2
+    ##    born_country       n
+    ##    <chr>          <int>
+    ##  1 Canada             8
+    ##  2 United Kingdom     8
+    ##  3 Poland             6
+    ##  4 France             4
+    ##  5 Hungary            4
+    ##  6 Italy              4
+    ##  7 Russia             4
+    ##  8 Austria            3
+    ##  9 Germany            3
+    ## 10 South Africa       3
+    ## # ℹ 17 more rows
 
 …

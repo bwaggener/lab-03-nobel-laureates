@@ -130,10 +130,11 @@ The data does not support buzzfeeds claim that "Most living Nobel laureates were
 ```{r frequencytable}
 
 nobel_living_science %>%
-  filter(country == "USA", born_country_us == "Other")
+  filter(country == "USA", born_country_us == "Other")%>%
   count(born_country) %>%
   arrange(desc(n))
 
 ```
+
 
 ...
