@@ -136,5 +136,5 @@ nobel_living_science %>%
 
 ```
 
-
+This frequency table shows that Canada and the United Kingdom are equally the most common countries for laureates who won their prize in the US but were born elsewhere.
 ...

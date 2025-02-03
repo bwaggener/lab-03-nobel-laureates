@@ -202,4 +202,6 @@ nobel_living_science %>%
     ## 10 South Africa       3
     ## # ℹ 17 more rows
 
-…
+This frequency table shows that Canada and the United Kingdom are
+equally the most common countries for laureates who won their prize in
+the US but were born elsewhere. …
