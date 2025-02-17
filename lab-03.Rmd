@@ -45,8 +45,8 @@ There are 26 variables and 935 observations. Each row represents an observation 
 
 nobel_living <- nobel %>%
   filter(!is.na(country)) %>%
-  filter(!is.na(gender)) %>%
-  filter(!is.na(died_date))
+  filter(!(gender == "org")) %>%
+  filter(is.na(died_date))
 ```
 
 

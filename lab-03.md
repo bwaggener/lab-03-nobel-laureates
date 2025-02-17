@@ -82,8 +82,8 @@ laureates who are still alive (their died_date is NA).”
 ``` r
 nobel_living <- nobel %>%
   filter(!is.na(country)) %>%
-  filter(!is.na(gender)) %>%
-  filter(!is.na(died_date))
+  filter(!(gender == "org")) %>%
+  filter(is.na(died_date))
 ```
 
 ### Exercise 3
@@ -187,20 +187,20 @@ nobel_living_science %>%
   arrange(desc(n))
 ```
 
-    ## # A tibble: 27 × 2
+    ## # A tibble: 21 × 2
     ##    born_country       n
     ##    <chr>          <int>
-    ##  1 Canada             8
-    ##  2 United Kingdom     8
-    ##  3 Poland             6
-    ##  4 France             4
-    ##  5 Hungary            4
-    ##  6 Italy              4
-    ##  7 Russia             4
-    ##  8 Austria            3
-    ##  9 Germany            3
-    ## 10 South Africa       3
-    ## # ℹ 17 more rows
+    ##  1 Germany            7
+    ##  2 United Kingdom     7
+    ##  3 China              5
+    ##  4 Canada             4
+    ##  5 Japan              3
+    ##  6 Australia          2
+    ##  7 Israel             2
+    ##  8 Norway             2
+    ##  9 Austria            1
+    ## 10 Finland            1
+    ## # ℹ 11 more rows
 
 This frequency table shows that Canada and the United Kingdom are
 equally the most common countries for laureates who won their prize in
